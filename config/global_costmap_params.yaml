@@ -1,0 +1,10 @@
+global_costmap:
+  plugins: 
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+  global_frame: camera_init
+  robot_base_frame: camera
+  update_frequency: 5.0
+  rolling_window: true
+  width: 15.0
+  height: 15.0
+  resolution: 1.0
