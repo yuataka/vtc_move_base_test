@@ -1,0 +1,20 @@
+<package format="2">
+  <name>unreal_robot_sim_2dnav</name>
+  <version>1.2.4</version>
+  <description>
+  This package was made for moveing robot in VTC
+  </description>
+  <author>yataka</author>
+  <maintainer email="yataka@hoge.com">yataka</maintainer>
+  <license>BSD</license>
+  <depend>boost</depend>
+  <depend>roscpp</depend>
+  <depend>move_base</depend>
+  <depend>cage_ros_bridge</depend>
+  <depend>velodyne_pointcloud</depend>
+  <depend>geometry_msgs</depend>
+  <depend>move_base_msgs</depend>
+  <depend>tf</depend>
+  <depend>std_msgs</depend>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
