@@ -56,4 +56,6 @@ include_directories(
 add_executable(${PROJECT_NAME}_translateNavGoal src/translate_navgoal.cpp)
 target_link_libraries(${PROJECT_NAME}_translateNavGoal ${catkin_LIBRARIES} )
 
-
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE)

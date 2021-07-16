@@ -1,0 +1,34 @@
+<launch>
+
+  <master auto="start"/> 
+
+
+
+
+
+ <!-- Run the map server --> 
+ <!-- node name="map_server" pkg="map_server" type="map_server" args="$(find my_map_package)/my_map.pgm my_map_resolution"/ --> 
+ 
+ <!--- Run AMCL -->    
+ <!--include file="$(find amcl)/examples/amcl_omni.launch" /-->
+
+  <node name="octomap_server" pkg="octomap_server" type="octomap_server_node">
+  <remap from="cloud_in" to="/velodyne_points" />
+  <param name="frame_id" type="string" value="odom" />
+  <!--param name="frame_id" type="string" value="map" /-->
+  <param name="base_frame_id" type="string" value="base_link" />
+  <param name="latch" value="false" />
+  <param name="resolution" value="0.05" />
+  </node>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+   <remap from="map" to="/projected_map" />
+   <rosparam file="$(find unreal_robot_sim_2dnav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+   <rosparam file="$(find unreal_robot_sim_2dnav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" /> 
+   <rosparam file="$(find unreal_robot_sim_2dnav)/config/local_costmap_params.yaml" command="load" />
+   <rosparam file="$(find unreal_robot_sim_2dnav)/config/global_costmap_params.yaml" command="load" /> 
+   <rosparam file="$(find unreal_robot_sim_2dnav)/config/base_local_planner_params.yaml" command="load" />
+ </node>
+
+</launch>
+
