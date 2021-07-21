@@ -19,6 +19,8 @@
   <param name="base_frame_id" type="string" value="base_link" />
   <param name="latch" value="false" />
   <param name="resolution" value="0.05" />
+  <param name="filter_ground" value="true" />
+  <param name="ground_filter/distance" value="0.04" />
   </node>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
