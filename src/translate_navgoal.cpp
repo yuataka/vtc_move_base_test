@@ -7,7 +7,7 @@
 #include "geometry_msgs/PoseStamped.h"
 #include "move_base_msgs/MoveBaseActionGoal.h"
 
-#include "unreal_robot_sim_2dnav/translate_navgoal.h"
+#include "vtc_move_base_test/translate_navgoal.h"
 
 namespace translatenavgoal {
 int translatenavgoal::translateNavGoal::goal_id;
