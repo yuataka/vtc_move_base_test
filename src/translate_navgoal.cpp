@@ -23,11 +23,6 @@ void translateNavGoal::callback(const geometry_msgs::PoseStamped::ConstPtr& goal
 	boost::shared_ptr<move_base_msgs::MoveBaseActionGoal> pub_goal = boost::make_shared<move_base_msgs::MoveBaseActionGoal>(action_goal);
 	ROS_INFO("callbak start. Goal_ID %d", goal_id);
 	translateNavGoal::set(goal_msg, pub_goal);
-	//pub_goal->header = goal_msg->header;
-	//pub_goal->goal_id.stamp = goal_msg->header.stamp;
-	//pub_goal->goal_id.id = std::to_string(translateNavGoal::goal_id);
-	//translateNavGoal::goal_id++;
-	//pub_goal->goal.target_pose = *goal_msg;
 	ROS_INFO("set finish. Goal_ID %d", goal_id);
 
 	move_base_goal_publisher.publish(pub_goal);
@@ -36,13 +31,12 @@ void translateNavGoal::callback(const geometry_msgs::PoseStamped::ConstPtr& goal
 
 void translateNavGoal::set(const geometry_msgs::PoseStamped::ConstPtr& goal_msg, move_base_msgs::MoveBaseActionGoalPtr& pub_goal)
 {
-	//boost::shared_ptr<geometry_msgs::PoseStamped> goal_msg_ptr = boost::const_pointer_cast<geometry_msgs::PoseStamped>(goal_msg);
-	//pub_goal->header = goal_msg_ptr->header;
-	//pub_goal->goal_id.stamp = goal_msg_ptr->header.stamp;
+	pub_goal->header = goal_msg->header;
+	pub_goal->goal_id.stamp = goal_msg->header.stamp;
 	pub_goal->goal_id.id = std::to_string(goal_id);
 	goal_id++;
 	
-	//pub_goal->goal.target_pose = *goal_msg_ptr;
+	pub_goal->goal.target_pose = *goal_msg;
 }
 
 
