@@ -1,5 +1,5 @@
 <package format="2">
-  <name>unreal_robot_sim_2dnav</name>
+  <name>vtc_move_base_test</name>
   <version>1.2.4</version>
   <description>
   This package was made for moveing robot in VTC

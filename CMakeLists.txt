@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8.3)
-project(unreal_robot_sim_2dnav)
+project(vtc_move_base_test)
 
 
 find_package(catkin REQUIRED COMPONENTS

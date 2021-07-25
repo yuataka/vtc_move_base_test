@@ -25,11 +25,11 @@
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
    <remap from="map" to="/projected_map" />
-   <rosparam file="$(find unreal_robot_sim_2dnav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-   <rosparam file="$(find unreal_robot_sim_2dnav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" /> 
-   <rosparam file="$(find unreal_robot_sim_2dnav)/config/local_costmap_params.yaml" command="load" />
-   <rosparam file="$(find unreal_robot_sim_2dnav)/config/global_costmap_params.yaml" command="load" /> 
-   <rosparam file="$(find unreal_robot_sim_2dnav)/config/base_local_planner_params.yaml" command="load" />
+   <rosparam file="$(find vtc_move_base_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+   <rosparam file="$(find vtc_move_base_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap" /> 
+   <rosparam file="$(find vtc_move_base_test)/config/local_costmap_params.yaml" command="load" />
+   <rosparam file="$(find vtc_move_base_test)/config/global_costmap_params.yaml" command="load" /> 
+   <rosparam file="$(find vtc_move_base_test)/config/base_local_planner_params.yaml" command="load" />
  </node>
 
 </launch>
