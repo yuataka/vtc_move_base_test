@@ -4,6 +4,16 @@ This repository written for testing ros move_base package in [VTC](https://githu
 ## Dependency
 About VTC install, see this [page](https://github.com/furo-org/VTC/blob/TC2020/docs/editor.md).
  * ROS (tested with Melodic)
+   About ROS install, see [here](http://wiki.ros.org/melodic/Installation/Ubuntu)
+   * octomap
+     ```
+     sudo apt-get install ros-${ROS_DISTRO}-octomap
+     ```
+   * move_base
+     ```
+     sudo apt-get install ros-${ROS_DISTRO}-move-base
+     ```
+
  * [cage_ros_stack](https://github.com/furo-org/cage_ros_stack)
  * [VTC](https://github.com/furo-org/VTC) (Install the other Windows-PC)
 
